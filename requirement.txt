@@ -1,0 +1,15 @@
+npm i express
+
+npm i nodemon
+
+npm i dotenv
+
+npm i express-async-handler
+
+npm i mongoose
+
+npm i bcrypt
+
+npm i jsonwebtoken
+
+npm i cors
