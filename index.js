@@ -21,7 +21,7 @@ app.use(express.json())
 app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
-    res.send({message:'BuyP is running..'});
+    res.send({message:'!Welcome BuyP is running..'});
 })
 
 app.use("/api/user",require("./routes/userRoute.js"));
