@@ -20,8 +20,12 @@ app.use(cors(corsOptions));
 app.use(express.json())
 app.use(bodyParser.json());
 
+const cookieOptions = {
+    maxAge: 1000 * 60 * 60 * 24
+};
+
 app.get('/', (req, res) => {
-    res.send({message:'!Welcome BuyP is running..'});
+    res.cookie("cookies", "Here_is_my_cookies", cookieOptions).send({message:'!Welcome BuyP is running..'}).status(200);
 })
 
 app.use("/api/user",require("./routes/userRoute.js"));

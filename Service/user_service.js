@@ -342,14 +342,14 @@ const loginUser = asyncHandler(async (req, res) => {
                     mobile: user.mobile,
                     email: user.email
                 }
-            }, process.env.ACCESS_TOKEN_SECERT, { expiresIn: "15m" })
+            }, process.env.ACCESS_TOKEN_SECERT, { expiresIn: "24h" })
 
             // const expires = new Date();
             // expires.setDate(expires.getSeconds() + 10);
 
             const cookieOptions = {
                 // httpOnly: true,
-                maxAge: 1000 * 60 * 15
+                maxAge: 1000 * 60 * 60 * 24
             };
 
             res.cookie("token", accessToken, cookieOptions).json({ message: "Login successfully" }).status(200);
