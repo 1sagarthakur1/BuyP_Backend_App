@@ -350,8 +350,8 @@ const loginUser = asyncHandler(async (req, res) => {
             const cookieOptions = {
                 // httpOnly: true,
                 maxAge: 1000 * 60 * 60 * 24,
-                secure: true,
-                sameSite: 'None'
+                // secure: true,
+                // sameSite: 'None'
             };
 
             res.cookie("token", accessToken, cookieOptions).json({ message: "Login successfully" }).status(200);
