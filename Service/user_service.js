@@ -350,6 +350,7 @@ const loginUser = asyncHandler(async (req, res) => {
             const cookieOptions = {
                 // httpOnly: true,
                 maxAge: 1000 * 60 * 60 * 24,
+                secure: true,
                 sameSite: 'None'
             };
 
