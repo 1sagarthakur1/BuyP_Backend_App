@@ -12,7 +12,6 @@ const port = process.env.PORT;
 
 const corsOptions = {
     origin: 'http://localhost:3000',
-    // origin: 'http://127.0.0.1:5501',
     credentials: true // Allow credentials (cookies, authorization headers, etc.)
 };
 
@@ -21,12 +20,8 @@ app.use(cors(corsOptions));
 app.use(express.json())
 app.use(bodyParser.json());
 
-const cookieOptions = {
-    maxAge: 1000 * 60 * 60 * 24
-};
-
 app.get('/', (req, res) => {
-    res.cookie("cookies", "Here_is_my_cookies", cookieOptions).send({message:'!Welcome BuyP is running..'}).status(200);
+    res.json({message:'!Welcome BuyP is running..'}).status(200);
 })
 
 app.use("/api/user",require("./routes/userRoute.js"));

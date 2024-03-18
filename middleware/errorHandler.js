@@ -4,7 +4,7 @@ const errorHandler = (err, req, res, next) => {
 
     const statusCode = err.status ? err.status : 500;
 
-    console.log(statusCode)
+    // console.log(statusCode)
     switch (statusCode) {
         case constants.VALIDATION_ERROR:
             res.status(statusCode).json({ title: "Validation Failed Found", message: err.message, stackTrace: err.stack });
