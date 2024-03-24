@@ -23,7 +23,8 @@ app.use(bodyParser.json());
 const cookieOptions = {
     maxAge: 1000 * 60 * 60 * 24, // 1 day
     sameSite: process.env.NODE_ENV === 'production' ? 'None' : 'Lax',
-    secure: process.env.NODE_ENV === 'production' // Set to true in production
+    secure: process.env.NODE_ENV === 'production', // Set to true in production
+    path: '/'
 };
 
 app.get('/', (req, res) => {
