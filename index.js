@@ -11,7 +11,7 @@ const app = express();
 const port = process.env.PORT;
 
 const corsOptions = {
-    origin: "*",
+    origin: ['http://localhost:3000', 'http://127.0.0.1:5501'],
     credentials: true // Allow credentials (cookies, authorization headers, etc.)
 };
 
@@ -21,7 +21,7 @@ app.use(express.json())
 app.use(bodyParser.json());
 
 const cookieOptions = {
-    httpOnly: true,
+    // httpOnly: true,
     maxAge: 1000 * 60 * 60 * 24,
     secure: true,
     sameSite: 'None'
