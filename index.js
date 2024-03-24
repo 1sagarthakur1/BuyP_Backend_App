@@ -21,11 +21,11 @@ app.use(express.json())
 app.use(bodyParser.json());
 
 const cookieOptions = {
-    // httpOnly: true,
-    maxAge: 1000 * 60 * 60 * 24,
-    secure: true,
-    sameSite: 'None'
+    maxAge: 1000 * 60 * 60 * 24, // 1 day
+    sameSite: process.env.NODE_ENV === 'production' ? 'None' : 'Lax',
+    secure: process.env.NODE_ENV === 'production' // Set to true in production
 };
+
 app.get('/', (req, res) => {
     res.cookie("token", "This_is_test_cookie_token", cookieOptions).json({ message: "Login successfully" }).status(200);
 })
