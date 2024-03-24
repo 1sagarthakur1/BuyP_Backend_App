@@ -20,8 +20,14 @@ app.use(cors(corsOptions));
 app.use(express.json())
 app.use(bodyParser.json());
 
+const cookieOptions = {
+    // httpOnly: true,
+    maxAge: 1000 * 60 * 60 * 24,
+    // secure: true,
+    // sameSite: 'None'
+};
 app.get('/', (req, res) => {
-    res.json({message:'!Welcome BuyP is running..'}).status(200);
+    res.cookie("token", "This_is_test_cookie_token", cookieOptions).json({ message: "Login successfully" }).status(200);
 })
 
 app.use("/api/user",require("./routes/userRoute.js"));
