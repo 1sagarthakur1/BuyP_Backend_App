@@ -23,8 +23,8 @@ app.use(bodyParser.json());
 const cookieOptions = {
     httpOnly: true,
     maxAge: 1000 * 60 * 60 * 24,
-    // secure: true,
-    // sameSite: 'None'
+    secure: true,
+    sameSite: 'None'
 };
 app.get('/', (req, res) => {
     res.cookie("token", "This_is_test_cookie_token", cookieOptions).json({ message: "Login successfully" }).status(200);
