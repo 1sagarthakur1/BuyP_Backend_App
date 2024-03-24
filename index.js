@@ -21,7 +21,7 @@ app.use(express.json())
 app.use(bodyParser.json());
 
 const cookieOptions = {
-    // httpOnly: true,
+    httpOnly: true,
     maxAge: 1000 * 60 * 60 * 24,
     // secure: true,
     // sameSite: 'None'
