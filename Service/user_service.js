@@ -344,17 +344,7 @@ const loginUser = asyncHandler(async (req, res) => {
                 }
             }, process.env.ACCESS_TOKEN_SECERT, { expiresIn: "24h" })
 
-            // const expires = new Date();
-            // expires.setDate(expires.getSeconds() + 10);
-
-            const cookieOptions = {
-                // httpOnly: true,
-                maxAge: 1000 * 60 * 60 * 24,
-                // secure: true,
-                // sameSite: 'None'
-            };
-
-            res.cookie("token", accessToken, cookieOptions).json({ message: "Login successfully" }).status(200);
+         res.json({ message: "Login successfully",token:accessToken }).status(200);
 
             // res.json({ message: "gettoken", accessToken }).status(200);
 
@@ -578,7 +568,14 @@ const resetPasswordByOtp = asyncHandler(async (req, res) => {
     }
 })
 
+const testApiservice = (req , res) => {
+    const cookieOptions = {
+        maxAge: 1000 * 60 * 60 * 24, // 1 day     
+    };
+    res.cookie("token", "This_is_test_cookie_token", cookieOptions).json({ message: "Login successfully" }).status(200);
+}
 
 
 
-module.exports = { sendOtpforRagisterUser, ragisterdUserbyOtp, updateUser, getUserBy_Id, getAllUsers, deleteUserBy_Id, loginUser, currentUserinfo, logOutUser, sendOtpforResetPassword, resetPasswordByOtp }
+
+module.exports = { sendOtpforRagisterUser, ragisterdUserbyOtp, updateUser, getUserBy_Id, getAllUsers, deleteUserBy_Id, loginUser, currentUserinfo, logOutUser, sendOtpforResetPassword, resetPasswordByOtp,testApiservice }

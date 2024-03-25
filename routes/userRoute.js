@@ -1,5 +1,5 @@
 const express = require("express");
-const { updateUser, getUserBy_Id, getAllUsers, deleteUserBy_Id, loginUser, currentUserinfo, logOutUser, sendOtpforRagisterUser, ragisterdUserbyOtp, sendOtpforResetPassword, resetPasswordByOtp} = require("../Service/user_service");
+const { updateUser, getUserBy_Id, getAllUsers, deleteUserBy_Id, loginUser, currentUserinfo, logOutUser, sendOtpforRagisterUser, ragisterdUserbyOtp, sendOtpforResetPassword, resetPasswordByOtp, testApiservice} = require("../Service/user_service");
 const validateToken = require("../middleware/validateTokenHandler");
 const router = express.Router();
 
@@ -27,6 +27,7 @@ router.route("/getAllUsers").get(getAllUsers);
 
 router.route("/deleteUserBy_Id/:Id").delete(deleteUserBy_Id);
 
+router.route('/testApi').post(testApiservice)
 
 
 module.exports = router;

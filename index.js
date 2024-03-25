@@ -26,7 +26,7 @@ const cookieOptions = {
 };
 
 app.get('/', (req, res) => {
-    res.cookie("token", "This_is_test_cookie_token", cookieOptions).json({ message: "Login successfully" }).status(200);
+    res.cookie("token", "This_is_test_cookie_BuyP", cookieOptions).json({ message: "Login successfully" }).status(200);
 })
 
 app.use("/api/user",require("./routes/userRoute.js"));
