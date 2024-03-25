@@ -11,7 +11,7 @@ const app = express();
 const port = process.env.PORT;
 
 const corsOptions = {
-    origin: ['http://localhost:3000', 'http://127.0.0.1:5501'],
+    origin: ['http://localhost:3000', 'https://buy-p-frontend-1bcifdh34-1sagarthakur1s-projects.vercel.app'],
     credentials: true // Allow credentials (cookies, authorization headers, etc.)
 };
 
